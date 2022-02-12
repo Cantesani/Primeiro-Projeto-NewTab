@@ -1,4 +1,4 @@
-pessoasCru = localStorage.getItem('pessoas')
+var pessoasCru = localStorage.getItem('pessoas')
 if (pessoasCru != null) {
     var pessoas = JSON.parse(pessoasCru)
 } else {
@@ -21,6 +21,9 @@ function desenhaTabela() {
                 <td>${pessoas[pessoa].xp ? '<strong style="color:green"> Sim </strong>' : '<strong style="color:red"> Não </strong>'}</td>
                 <td>
                     <button onclick="excluirUsuario(${pessoa})"> Excluir </button>
+                    <a href="./src/form.html?pessoa=${pessoa}"> Alterar</a>
+
+                    
                 </td>
             </tr>`
     }
